@@ -1,6 +1,15 @@
-function Ride_Function() {
-    var height, Can_ride;
-    height = document.getElementById("height").value;
-    Can_ride = (height < 52) ? "You are too short":"You are tall enough";
-    document.getElementById("Ride").innerHTML = Can_ride + " to ride.";
-};
+function countdown() {
+    var seconds = document.getElementById("seconds").value;
+    var timerID;
+
+    function tick() {
+        seconds = seconds - 1;
+        timer.innerHTML = seconds;
+        timerID = setTimeout(tick, 1000);
+        if(seconds <= 0) {
+            alert("Time's Up!");
+            clearTimeout(timerID);
+        }
+    }
+    tick();
+}
