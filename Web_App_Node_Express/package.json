@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "@powershell -Command $env:DEBUG='app';nodemon app.js",
+    "start": "@powershell -Command $env:DEBUG='app,app:*';nodemon app.js",
     "debug": "@powershell -Command $env:DEBUG='*';nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

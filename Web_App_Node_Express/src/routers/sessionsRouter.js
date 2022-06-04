@@ -7,14 +7,35 @@ const { MongoClient } = require('mongodb');
 const sessionsRouter = express.Router();
 
 // this will route to the sessions (link Sessions)
-sessionsRouter.route('/')
-    .get((req, res) => {
-        // use .render here for the index.ejs file and the object we want to render
-        // when we render sessions, we have a sessions object to work with
-        res.render('sessions', {
-            sessions,
-        });
-    });
+sessionsRouter.route('/').get((req, res) => {
+
+    // this is where the link for our database will go
+    const url = 'mongodb+srv://dbUser:fBDv9FaCR1HnDXsF@globomanticsprac.vscmjbz.mongodb.net/?retryWrites=true&w=majority';
+    // this is the name of our database
+    const dbName = 'globomantics';
+    // how to connect to the database
+    // we are creating an environment that allows MongoBD to run in an async fashion
+    (async function mongo(){
+        // creating a client
+        let client;
+        try {
+            // we don't need a promise, it's just to wait to connent to the url
+            client = await MongoClient.connect(url);
+            debug('Connected to the Mongo DB.');
+
+            // this is our database object
+            const db = client.db(dbName);
+
+            const sessions = await db.collection('sessions').find().toArray();
+            res.render ('sessions', {sessions});
+
+        } catch (error) {
+            // this will give the whole error
+            debug(error.stack);
+        }
+        client.close();
+    })();
+});
 
 // if there is a number parameter, this will route to that particular session
 // /sessions/id#

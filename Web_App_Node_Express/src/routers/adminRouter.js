@@ -8,6 +8,7 @@ const sessions = require('../data/sessions.json');
 
 const adminRouter = express.Router();
 
+// adminRouter still broken. link for potential fix: https://www.mongodb.com/blog/post/quick-start-nodejs-mongodb-how-to-get-connected-to-your-database
 adminRouter.route('/').get((req, res)=>{
     // this is where the link for our database will go
     const url = 'mongodb+srv://dbUser:fBDv9FaCR1HnDXsF@globomanticsprac.vscmjbz.mongodb.net/?retryWrites=true&w=majority';
@@ -33,7 +34,8 @@ adminRouter.route('/').get((req, res)=>{
             // this will give the whole error
             debug(error.stack);
         }
-    }())
+        client.close();
+    })();
 });
 
 module.exports = adminRouter;

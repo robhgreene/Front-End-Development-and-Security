@@ -128,7 +128,8 @@
               <p><%=session.description.slice(0,300)%></p>
               <!--this is the link to individual session pages-->
               <!--the index of each session object in the .json array will be used-->
-              <a href="/sessions/<%=index%>" class="btn-oval">Learn More</a>
+              <!--sessions._id is a propertry added to our objects when they are put into the MongoDataBase-->
+              <a href="/sessions/<%=sessions._id%>" class="btn-oval">Learn More</a>
 
             </div>
           <% }) %> 
