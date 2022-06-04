@@ -1,6 +1,8 @@
 const express = require('express');
 // object for using the .json file with our sessions information
 const sessions = require('../data/sessions.json');
+const debug = require('debug')('app:sessionRouter');
+const { MongoClient } = require('mongodb');
 // defining our router object
 const sessionsRouter = express.Router();
 
