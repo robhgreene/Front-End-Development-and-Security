@@ -13,6 +13,8 @@ const app = express();
 
 //our session router functionality is being pulled from sessionRouter.js
 const sessionsRouter = require('./src/routers/sessionsRouter');
+// pulling the database functionality from adminRouter.js
+const adminRouter = require('./src/routers/adminRouter');
 
 app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, '/public/')));
@@ -28,6 +30,8 @@ app.set('view engine', 'ejs');
 // this is going to hold all the code to deal with a session route
 // it will link to sessions and handles all the sub-pages
 app.use('/sessions', sessionsRouter);
+// this will handles the database
+app.use('/admin', adminRouter);
 
 
 // this will not show when express.static is used and it has a valid path
