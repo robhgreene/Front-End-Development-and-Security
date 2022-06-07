@@ -10,6 +10,7 @@
             Here is some text.
         </p>
         <p id="myDog"></p>
+        <p id="example" ondblclick="dbClick()">Double click on this paragraph.</p>
         <!-- Here is an example of converting an object to a JSON -->
         <script>
             var someObject = {
@@ -46,7 +47,7 @@
 
             // example of double-click functionality
             function dbClick() {
-
+                document.getElementById("example").style.color="red";
             }
 
         </script>
