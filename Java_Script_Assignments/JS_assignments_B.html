@@ -9,5 +9,46 @@
         <p>
             Here is some text.
         </p>
+        <p id="myDog"></p>
+        <!-- Here is an example of converting an object to a JSON -->
+        <script>
+            var someObject = {
+                "name":"John",
+                "age":31,
+                "city":"New York"
+            };
+            console.log(someObject);
+            var someJSON = JSON.stringify(someObject);
+            console.log(someJSON);
+
+            // here is an example of converting a JSON to an object
+            // this is the format for a JSON string
+            var dog = '{"name":"Dax", "breed": "Great Dane", "color":"white"}';
+            var JSONstring_1 = JSON.parse(dog);
+            document.getElementById("myDog").innerHTML = JSONstring_1.name + " the " + JSONstring_1.breed;
+            var JSONstring_2 = JSON.parse(dog, function(key, value){
+                if (key == "breed") {
+                    return value.toUpperCase();
+                }
+                else {
+                    return value;
+                }
+            });
+            document.getElementById("myDog").innerHTML = JSONstring_2.breed;
+
+            // example of local storage
+            // storing a key/value pair
+            localStorage.setItem("firstName", "Robert");
+            // retrieving the 
+            document.getElementById("myDog").innerHTML = localStorage.getItem("firstName");
+            // clearing the data from the browser
+            localStorage.clear();
+
+            // example of double-click functionality
+            function dbClick() {
+
+            }
+
+        </script>
     </body>
 </html>
