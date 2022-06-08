@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    
+    <!-- Head -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
+        <title>Robert Greene Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="css/sample_portfolio.css">
+    </head>
+
+    <!-- Body -->
+    <body class="Background">   
+
+        <!-- Navbar -->
+        <div class="Navbar">
+            <a class="active" href="#Home">Home</a>
+            <!-- New section added -->
+            <a href="#Slideshow">Slideshow</a>
+            <a href="#About">About</a>
+            <a href="#GitHub">GitHub</a>
+            <!-- Onclick and ondblclick functions added to open and close the contact form -->
+            <a onclick="openForm()" ondblclick="closeForm()">Contact</a>
+        </div>
+        <!--END Navbar-->
+
+        <!--Breaks for spacing-->
+        <br>
+        <br>
+
+        <!-- Background video -->
+        <div id="Home">
+            <video autoplay muted loop id="Typing_Video">
+                <source src="images/video/computer_video.mp4" type="video/mp4">
+                <!-- Display message if video fails to run -->
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+        <!--END Background Video-->
+
+        <!-- Video text -->
+        <div class="Video_Text">
+            <h1 class="white-text">Robert Greene's Portfolio</h1>
+            <strong>
+                <p class="center">
+                    <q>Any fool can write code that a computer can understand.
+                        <br>Good programmers write code that humans can understand.
+                    </q>
+                    <br> -Martin Fowler<br>
+                    <br>
+                    <br>Salutations! My name is Robert, and welcome to my portfolio website. Here, I will tell you about my background and experience.
+                    <br>
+                    <br>Thank you for stopping by. Enjoy! 
+                </p>
+            </strong>
+        </div>
+        <!--END Video text-->
+
+        <!-- Slideshow section -->
+        <div id="Slideshow">
+            <div id="Slideshow_Background"> 
+                <div id="Slideshow_Container">
+                    <!-- Slide 1 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/profile_pic_Robert.jpg" alt="Picture of yourself">
+                        <div class="text">I am here to help with your projects.</div>
+                    </div>
+                    <!-- Slide 2 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JS logos"> 
+                        <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                    </div>
+                    <!-- Slide 3 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/Python.png" alt="Python logo">
+                        <div class="text">the popular programming language Python,</div>
+                    </div>
+                    <!-- Slide 4 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/C_and_C++.jpg" alt="C & C++ logo">
+                        <div class="text">C and C++, </div>
+                    </div>
+                    <!-- Slide 5 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/cybersecurity-freepik.jpg" alt="SQL logo"> 
+                        <div class="text">with a focus in cybersecurity.</div>
+                    </div>
+                    <!-- Slide 6 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/handshake-technology.jpg" alt="Replace with a picture of your choosing"> 
+                        <div class="text"><a class="white-text" onclick="openForm()" href="#Contact">Contact me now!</a></div> 
+                    </div>
+                    <!-- Previous and next buttons -->
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                    <!-- END Previous and next buttons -->
+                </div>
+                <br> <!-- Adds a space between the slideshow images and the dots -->
+
+                <!-- Slideshow dots (these are another way for users to navigate through the slideshow) -->
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                    <span class="dot" onclick="currentSlide(4)"></span> 
+                    <span class="dot" onclick="currentSlide(5)"></span> 
+                    <span class="dot" onclick="currentSlide(6)"></span> 
+                </div>
+            </div>
+        </div>
+        <!-- END Slideshow section -->
+
+        <!-- About section -->
+        <div class="Row" id="About">
+            <!-- Left column -->
+            <div class="Column_2">
+                <img src="images/working_on_a_chip.jpg" alt="Picture of working on a chip">
+            </div>
+            <!--END Left column-->
+            
+            <!-- Right column -->
+            <div class="Column_1">
+                <h1>About</h1>
+                <p>
+                    I am a student at the Tech Academy! I am a member of the Oregon Army National Guard, I love to travel and see live music. 
+                    <br>
+                    <br>I am currently enrolled in <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Cyber Security Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, C++, C, Ruby, Python and more. 
+                    <br>
+                    <br>I am here to help secure your data and give you peace with either your business or personal endevors on the internet. <a onclick="openForm()">Contact</a> me below!
+                </p>
+            </div>
+            <!--END Right column-->
+        </div>
+
+        <!-- GitHub section -->
+        <div class="Row" id="GitHub">
+            <!-- Left column -->
+            <div class="Column_1">
+                <h1>GitHub</h1>
+                <p>You can view my coding projects on my GitHub profile here:
+                    <br>
+                    <p class="center"><a href="https://github.com/robhgreene" target="_blank">My GitHub</a></p>
+                </p>
+            </div>
+            <!-- Right column -->
+            <div class="Column_2">
+                <a href="https://github.com/robhgreene" target="_blank"><img src="images/GitHub.png"></a>
+            </div>
+            <!--END Right column-->
+        </div>
+        <!--END GitHub section-->
+
+        <!-- Contact form -->
+        <div id="Contact">
+           <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+           <div class="form-popup" id="myForm">
+                <form name="ContactForm" action="https://formspree.io/info@learncodinganywhere.com" onsubmit="return validateForm()" method="POST" class="form-container"> <!-- Here we are using a free online service from https://formspree.io/ to send our contact form to an email address of our choosing - note: it will not run unless live on the internet, you have to push it to your online website first -->
+                    <h1>Contact</h1>
+                    <label for="name"><b>Name:</b></label>
+                        <input type="text" id="Name" name="Name" placeholder="Please enter your name here">
+                    <label for="phone"><b>Phone</b></label>
+                        <input type="text" id="PhoneNumber" name="Phone Number" placeholder="Please enter your phone number">
+                    <label for="email"><b>Email</b></label>		
+                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
+                    <label for="message"><b>Message</b></label>
+                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
+                    <!-- Buttons -->
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                    <!-- END Buttons -->
+                </form>
+           </div>
+        </div>
+        <!--END Contact section-->
+        
+        <!-- Footer section -->
+        <footer>
+                <p class="center">&copy Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p><br>
+        </footer>
+        <script src="js/sample_portfolio.js"></script>
+    </body>
+</html>
