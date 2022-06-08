@@ -1,8 +1,9 @@
-// These functions open and close the contact form
+//  open the contact form
 function openForm() {
     document.getElementById("myForm").style.display = "block";
 }
 
+// close the contact form
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
 }
@@ -23,18 +24,26 @@ function currentSlide(n) {
 
 
 function showSlides(n) {
-    let slides = document.getElementsByClassName("mySlides"); // This takes all elements with the class name "mySlides" and stores them in the variable array "slides"
-    let dots = document.getElementsByClassName("dot"); // This takes all elements with the class name "dot" and stores them in the variable array "dots"
-    if (n > slides.length) {slideIndex = 1}; // If n (the number passed into the function) is greater than the length of the array "slides", the slideIndex is set to 1
-    if (n < 1) {slideIndex = slides.length}; // If n (the number passed into the function) is less than 1, te slideIndex is set to the length of the array "slides"
+    // takes all elements with the class name "mySlides" and stores them in the variable array "slides"
+    let slides = document.getElementsByClassName("mySlides");
+    // takes all elements with the class name "dot" and stores them in the variable array "dots" 
+    let dots = document.getElementsByClassName("dot");
+    // If n (the number passed into the function) is greater than the length of the array "slides", the slideIndex is set to 1 
+    if (n > slides.length) {slideIndex = 1};
+    // If n (the number passed into the function) is less than 1, te slideIndex is set to the length of the array "slides" 
+    if (n < 1) {slideIndex = slides.length};
+    // This for loop takes each item in the array "slides" and sets the display to none 
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; // This for loop takes each item in the array "slides" and sets the display to none
+        slides[i].style.display = "none"; 
     }
+    // loop takes each item in the array "dots" and removes "active" which removes the active styling
     for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", ""); // This for loop takes each item in the array "dots" and removes "active" which removes the active styling
+        dots[i].className = dots[i].className.replace(" active", ""); 
     }
-    slides[slideIndex - 1].style.display = "block"; // This displays the image in the slideshow
-    dots[slideIndex - 1].className += " active"; // This adds the active styling to the dot associated with the image
+    // displays the image in the slideshow
+    slides[slideIndex - 1].style.display = "block";
+    // adds the active styling to the dot associated with the image 
+    dots[slideIndex - 1].className += " active"; 
 }
 
 // checks input validation for the from. Will not Submit a form with any empty fields
